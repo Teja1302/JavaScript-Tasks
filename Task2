@@ -1,0 +1,19 @@
+const loan=[
+    {loanAmount:10000, intrestRate:5, durationIp: 2},
+    {loanAmount:15000, intrestRate:4.5,durationIp: 3},
+    {loanAmount:20000, intrestRate:6, durationIp: 2.5},
+];
+
+function calculateTotalIntrest(loan)
+{
+let totalIntrest = 0;
+loan.forEach(loans => {
+    const{loanAmount, intrestRate, durationIp}=loans;
+
+    totalIntrest += (loanAmount * (intrestRate / 100)) * durationIp;
+});
+    return totalIntrest;
+}
+
+const totalIntrestEarned = calculateTotalIntrest(loan);
+console.log(`Total interest earned from all loans: $${totalIntrestEarned}`);
