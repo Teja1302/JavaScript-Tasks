@@ -1,0 +1,26 @@
+const cars =[
+    {brand:'Toyota', name:'Tom'},
+    {brand:'suziki', name:'Jerry'},
+    {brand:'kia', name:'Motu'},
+    {brand:'BmW', name:'patlu'},
+    {brand:'Toyota', name:'Shinchan'}
+];
+
+function splicarsBrand(cars) {
+    const rooms = {};
+
+    cars.forEach(car => {
+      const { brand, name } = car;
+    rooms[brand] =rooms[brand] || [] ;
+      rooms[brand].push(name);
+    });
+    return rooms;
+  }
+  const carsInRooms = splicarsBrand(cars);
+  for (const brand in carsInRooms) {
+    console.log(`Cars of brand ${brand}:`);
+    carsInRooms[brand].forEach((name, index) => {
+      console.log(`${index +1}. ${name}`);
+    });
+    console.log(); 
+  }
